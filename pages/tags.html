@@ -1,0 +1,29 @@
+---
+layout: page
+title: Tags
+permalink: /tags
+---
+
+{% assign all_tags = site.tags | sort %}
+
+
+{% for a in all_tags %}
+{%- assign tag = a[0] -%}
+{%- assign tagged_pages = a[1] -%}
+
+<h2 id = {{ tag | slugify }}>{{ tag }}</h2>
+<ul class="post-list">
+
+    {% for tagged_page in tagged_pages %}
+    <li>
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        {{ tagged_page.date | date: date_format }}
+        </time>
+        <span class="post-meta">{% for tag in tagged_page.tags %}<a class="post-meta" href = #{{ tag | slugify }}> #{{ tag }} </a>{% endfor %}</span>
+        <a class="post-link" href = {{ tagged_page.url | relative_path }}> {{ tagged_page.title }} </a>
+    </li>
+    {% endfor %}
+
+</ul>
+{% endfor %}
