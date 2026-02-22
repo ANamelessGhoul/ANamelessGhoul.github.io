@@ -10,3 +10,18 @@
 .social-media-list {
     text-align: right;
 }
+
+.playable-container {
+    margin: 0 auto;
+    overflow: auto;
+    width: min-content
+}
+
+.playable {
+    display: block;
+    margin: 0 auto;
+}
+
+iframe {
+    border-style: none;
+}

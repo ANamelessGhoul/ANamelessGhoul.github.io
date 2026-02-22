@@ -1,0 +1,23 @@
+---
+layout: playable
+title: Flappy Alien
+permalink: /games/flappyalien
+---
+
+<div class="playable-container">
+    <iframe id="playable" class="playable" width="1280" height="720" scrolling="no" src="/GameAssets/FlappyAlien/index.html" title="FlappyAlien" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" msallowfullscreen="true" allow="autoplay; fullscreen *; gamepad;"></iframe>
+    <div style="text-align: right; margin-top: 5px;">
+        <button onclick="fullscreenPressed()">Fullscreen</button>
+    </div>
+    <div>
+        <h1>How to play</h1>
+        <p><b>SPACE</b>, <b>LEFT CLICK</b> or <b>TOUCH</b> to jump. <i>Recommended:</i> Use fullscreen button below the game to go fullscreen.</p>
+    </div>
+</div>
+<script>
+
+    function fullscreenPressed(){
+        const framed_doc = document.getElementById("playable").contentWindow;
+        framed_doc.goFullScreen()
+    }
+</script>
